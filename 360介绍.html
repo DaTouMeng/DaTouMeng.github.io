@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.fullPage.min.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .section{
+            overflow: hidden;
+        }
+        .section  .logo{
+            display: block;
+            width: 251px;
+            height: 186px;
+            background: url("images/logo.png");
+            margin: 100px auto 0;
+
+        }
+       .one .text{
+        text-align: center;
+           margin-top: 50px  ;
+        }
+        .one .text>img{
+            margin-right: 50px;
+            opacity: .5;
+            transition: margin-right 1s , opacity 1s;
+        }
+        .one .nav{
+            width: 772px;
+            height: 49px;
+            background: url("images/info_1.png");
+            margin: 20px auto;
+        }
+        .one.current .text>img{
+            margin-right: 10px;
+            opacity: 1;
+/*第二版*/
+        }
+        .two>div{
+            display: flex;
+            justify-content: space-around;
+            flex-direction: row;
+            align-items:center ;
+
+        }
+        .two .shield{
+            width: 440px;
+            font-size: 0;
+        }
+        .two .shield > img:nth-of-type(1){
+            transform: translate(100px,100px) rotate(30deg);
+        }
+        .two .shield > img:nth-of-type(2){
+            transform: translate(-100px,-100px) rotate(-30deg);
+        }
+        .two .shield > img:nth-of-type(3){
+            transform: translate(200px,200px) rotate(60deg);
+        }
+        .two .shield > img:nth-of-type(4){
+            transform: translate(-200px,-200px) rotate(-60deg);
+        }
+        .two .shield > img:nth-of-type(5){
+            transform: translate(150px,150px) rotate(90deg);
+        }
+        .two .shield > img:nth-of-type(6){
+            transform: translate(50px,150px) rotate(-90deg);
+        }
+        .two .shield > img:nth-of-type(7){
+            transform: translate(-150px,-150px) rotate(60deg);
+        }
+        .two .shield > img:nth-of-type(8){
+            transform: translate(10px,-250px) rotate(-90deg);
+        }
+        .two .shield > img:nth-of-type(9){
+            transform: translate(-250px,10px) rotate(45deg);
+        }
+        .two .info{
+            width: 630px;
+            height: 309px;
+            background: url("images/info_2.png") no-repeat;
+        }
+        .two .shield>img{
+            transition: transform 1s;
+        }
+        /*第二效果*/
+        .two.current .shield>img{
+           transform: none;
+        }
+        /*第三*/
+        .three{
+            position: relative;
+            overflow: hidden;
+        }
+.three  .info{
+    width: 631px;
+    height: 278px;
+    background: url("images/info_3.png");
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-100%, -50% );
+}
+        .three .circle{
+            width: 453px;
+            height: 449px;
+            background: url("images/circle.png") no-repeat;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(20%,-50%);
+        }
+        .three .circle>.rocket{
+            width: 203px;
+            height: 204px;
+            background: url("images/rocket.png");
+            position: absolute;
+            left: -600px;
+            top:700px;
+            transition: left 1s,top 1s;
+        }
+        .three.current .circle>.rocket{
+            left: 125px;
+            top:125px;
+        }
+        /*第四*/
+        .four{
+position: relative;
+        }
+        .four .searchBox{
+            width: 529px;
+            height: 438px;
+            /*background-color: pink;*/
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-120%, -50% );
+            position: relative;
+
+        }
+        .four .searchBox .searchInput{
+            width: 0px;
+            height: 66px;
+            background: url("images/search.png");
+            transition: width 0.4s;
+        }
+        .four .searchBox .searchText{
+            width: 0px;
+            height: 22px;
+            background: url("images/key.png");
+            position: absolute;
+            top: 24px;
+            left: 24px;
+            transition: width 0.7s  0.3s steps(5);
+        }
+        .four .searchBox .searchResult{
+            width: 529px;
+            height: 0px;
+            background: url("images/result.png");
+            position: absolute;
+            top: 53px;
+            left: 0px;
+            transition: height 1s  1s;
+        }
+        .four .info{
+            width: 612px;
+            height: 299px;
+            background: url("images/info_4.png");
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(0, -50% );
+        }
+        /*第四效果*/
+        .four.current .searchBox .searchInput{
+            width: 529px;
+        }
+        .four.current .searchBox .searchText{
+            width: 100px;
+        }
+        .four.current .searchBox .searchResult{
+            height: 370px;
+        }
+    </style>
+</head>
+<body>
+<div id="dowebok">
+    <div class="section one">
+        <a href="javascript:;" class="logo"></a>
+        <div class="text">
+            <img src="images/text_1.png" alt="">
+            <img src="images/text_2.png" alt="">
+            <img src="images/text_3.png" alt="">
+            <img src="images/text_4.png" alt="">
+            <img src="images/text_5.png" alt="">
+            <img src="images/text_6.png" alt="">
+            <img src="images/text_7.png" alt="">
+            <img src="images/text_8.png" alt="">
+        </div>
+        <div class="nav"></div>
+    </div>
+    <div class="section two">
+       <div class="shield ">
+           <img src="images/shield_1.png" alt="">
+           <img src="images/shield_2.png" alt="">
+           <img src="images/shield_3.png" alt="">
+           <img src="images/shield_4.png" alt="">
+           <img src="images/shield_5.png" alt="">
+           <img src="images/shield_6.png" alt="">
+           <img src="images/shield_7.png" alt="">
+           <img src="images/shield_8.png" alt="">
+           <img src="images/shield_9.png" alt="">
+       </div>
+        <div class="info"></div>
+    </div>
+    <div class="section three">
+       <div class="info"></div>
+        <div class="circle">
+            <div class="rocket"></div>
+        </div>
+    </div>
+    <div class="section four">
+       <div class="searchBox">
+           <div class="searchInput"></div>
+           <div class="searchText"></div>
+           <div class="searchResult"></div>
+       </div>
+        <div class="info"></div>
+    </div>
+</div>
+</body>
+<script>
+    $(function(){
+        $("#dowebok").fullpage({
+            sectionsColor:['#0da5d6', '#2AB561', '#DE8910', '#16BA9D', '#0DA5D6'],
+            afterLoad:function (anchorLink,index) {
+                $('.section').removeClass("current");
+                $(".section").eq(index-1).addClass("current");
+            }
+
+        });
+
+    });
+</script>
+</html>
